@@ -1,0 +1,7 @@
+.loading-container {
+    min-height: 100vh; /* 100% of view-port height https://stackoverflow.com/questions/1575141/how-to-make-a-div-100-height-of-the-browser-window*/
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
