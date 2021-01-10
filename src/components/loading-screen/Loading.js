@@ -9,5 +9,5 @@ export default function Loading() {
             <RestaurantIcon style={{fontSize: 300}} />
             <h1>Loading data...</h1>
         </div>
-    )
+    );
 }

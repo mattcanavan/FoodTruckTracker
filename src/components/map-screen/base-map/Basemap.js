@@ -1,8 +1,12 @@
 import React from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { Icon } from "leaflet";
+
 import icon from './food-truck-icon.svg'; //courtesy of Freepik. thank you!
 import './Basemap.css';
+
+/// Components
+import TruckPopUp from '../../truck-popup/TruckPopUp.js';
 
 
 /// DEFAULT Settings
@@ -11,10 +15,11 @@ const defaultZoom = 13;
 const customIcon = new Icon({
     iconUrl: icon,
     iconSize: [35, 35]
-})
+});
+
 
 export default function Basemap(props) {
-    const [activeTruck, setActiveTruck] = React.useState(null);
+    const [activeTruck, setActiveTruck] = React.useState();
 
     return (
         <div>
@@ -28,7 +33,7 @@ export default function Basemap(props) {
                 />
 
                 {/* CREATE POINTS TO BE MAPPED */}
-                {props.trucksLatLng.map((truck, index) => {
+                {props.trucksLatLng.map((truck) => {
                     return (
                         <Marker 
                         key={truck.truck_id}
@@ -41,7 +46,7 @@ export default function Basemap(props) {
                             {click: () => setActiveTruck(truck)}
                         }
                         />
-                    )
+                    );
                 })}
 
                 {/* CREATE DATA LABELS FOR POINTS */}
@@ -54,9 +59,7 @@ export default function Basemap(props) {
                     onClose={() => setActiveTruck(null)} //handler provided by Leaflet
                     >
                         <div className='basemap-popup'>
-                            <h2>{activeTruck.truck_name}</h2>
-                            <h4>Cusine: {activeTruck.cusine_type}</h4>
-                            <button onClick={()=>null}>More Info</button>
+                            <TruckPopUp activeTruck={activeTruck} />
                         </div>
                     </Popup>
                 )}
@@ -64,5 +67,5 @@ export default function Basemap(props) {
             </MapContainer>
 
         </div>
-    )
+    );
 }

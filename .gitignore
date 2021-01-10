@@ -24,3 +24,6 @@ yarn-error.log*
 
 #https://stackoverflow.com/questions/65079558/how-to-delete-eslintcache-file-in-react
 .eslintcache
+
+# .env
+.env
