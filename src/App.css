@@ -1,1 +1,30 @@
-*{ margin: 0}
+/* GLOBAL STYLES */
+
+*{ 
+    margin: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+
+@media screen and (min-width: 375px) {
+    /* IPHONE/MOBILE */
+    h1{
+        font-size: 3rem;
+    }
+}
+
+
+@media screen and (min-width: 460px) {
+    /* SMALL TABLET */
+}
+
+@media screen and (min-width: 960px) {
+    /* LARGE TABLETS AND SMALL LAPTOPS */
+}
+
+@media screen and (min-width: 1200px) {
+    /* DESKTOP STYLES */
+}

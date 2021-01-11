@@ -1,6 +1,12 @@
 import React from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth.js';
 
+/// STYLE
+import './TruckPopUp.css';
+
+/// INITAL Data
+const starSymbol = '\u{1f929}';
+
 export default function TruckPopUp(props) {
     const [truckData, setTruckData] = React.useState();
     const [isLoading, setIsLoading] = React.useState(true);
@@ -27,10 +33,10 @@ export default function TruckPopUp(props) {
     }
 
     return (
-        <div>
-            <h4>Average Stars: {truckData.average_stars}</h4>
+        <div className='truckpopup'>
             <h1>{truckData.truck_name}</h1>
-            <h3>Try {truckData.cusine_type} !</h3>
+            <h4>Avg Rating: {`${starSymbol.repeat(truckData.average_stars)}`}/5</h4>
+            <h3>Type: {truckData.cusine_type} !</h3>
         </div>
     );
 }
