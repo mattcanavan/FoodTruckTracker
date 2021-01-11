@@ -1,6 +1,45 @@
-.basemap-popup {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* IPHONE/MOBILE */
+  @media screen and (min-width: 375px) {
+
+  .basemap-popup {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .leaflet-popup-content-wrapper {
+        min-width: 75vw;
+        height: 75vh;
+  }
+  
+  .leaflet-popup-tip-container {
+      visibility: hidden;
+    }
+}
+/*  */
+
+/* SMALL TABLET */
+@media screen and (min-width: 460px) {
+    /* left blank */
+}
+/*  */
+
+/* LARGE TABLETS AND SMALL LAPTOPS */
+@media screen and (min-width: 960px) {
+    
+    .leaflet-popup-content-wrapper {
+        width: 30vw;
+    }
+
+}
+/*  */
+
+/* DESKTOP STYLES */
+@media screen and (min-width: 1200px) {
+    
+    .leaflet-popup-content-wrapper {
+        width: 30vw;
+    }
+
 }

@@ -51,14 +51,14 @@ export default function Basemap(props) {
 
                 {/* CREATE DATA LABELS FOR POINTS */}
                 {activeTruck && (
-                    <Popup 
+                    <Popup className='basemap-popup'
                     position={[
                         activeTruck.current_location_lat,
                         activeTruck.current_location_long  
                     ]}
                     onClose={() => setActiveTruck(null)} //handler provided by Leaflet
                     >
-                        <div className='basemap-popup'>
+                        <div>
                             <TruckPopUp activeTruck={activeTruck} />
                         </div>
                     </Popup>
