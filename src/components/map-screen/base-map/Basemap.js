@@ -3,6 +3,8 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { Icon } from "leaflet";
 
 import icon from './food-truck-icon.svg'; //courtesy of Freepik. thank you!
+
+/// Styles
 import './Basemap.css';
 
 /// Components
